@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Tait | VR/MR Developer</title>
+    <!-- Modern Typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <meta name="description"
+        content="Sean Tait - VR/MR Developer Portfolio. 5+ years of experience building immersive applications in Unity and Unreal Engine.">
+</head>
+
+<body>
+    <!-- Cyber particle canvas -->
+    <canvas id="cyberCanvas" style="position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.35;"></canvas>
+
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar glass">
+        <div class="nav-content">
+            <a href="#" class="logo">Sean <span class="gradient-text">Tait.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Assets/PDF/Sean Tait's Resume programming.docx.pdf" target="_blank" class="nav-resume-btn"
+                        style="color: var(--accent); border: 1px solid var(--accent); padding: 0.4rem 1rem; border-radius: 16px;">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="about">
+        <div class="hero-content">
+            <h1 class="reveal-text">Sean <span class="gradient-text">Tait.</span></h1>
+            <p class="fade-up-delay">VR/MR Developer with 5+ years of experience building immersive applications in
+                Unity and Unreal Engine for Meta Quest, HoloLens, and hand-tracking interfaces.</p>
+            <a href="#work" class="btn btn-primary fade-up-delay-2">View Projects</a>
+            <a href="Assets/PDF/Sean Tait's Resume programming.docx.pdf" target="_blank"
+                class="btn btn-secondary fade-up-delay-2" style="margin-left: 1rem;">View Resume</a>
+        </div>
+
+        <!-- Tech Hub: Icons and Scroll Indicator -->
+        <div class="tech-hub">
+            <div class="tech-icons">
+                <div class="tech-icon unreal" title="Unreal Engine"><i class="devicon-unrealengine-plain"></i></div>
+                <div class="tech-icon unity" title="Unity"><i class="devicon-unity-plain"></i></div>
+                <div class="tech-icon csharp" title="C#"><i class="devicon-csharp-plain"></i></div>
+                <div class="tech-icon js" title="JavaScript"><i class="devicon-javascript-plain"></i></div>
+                <div class="tech-icon html" title="HTML5"><i class="devicon-html5-plain"></i></div>
+                <div class="tech-icon css" title="CSS3"><i class="devicon-css3-plain"></i></div>
+                <div class="tech-icon github" title="GitHub"><i class="devicon-github-original"></i></div>
+                <div class="tech-icon firebase" title="Firebase"><i class="devicon-firebase-plain"></i></div>
+            </div>
+            <div class="scroll-indicator fade-up-delay-3">
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section id="skills" class="portfolio-section" style="padding-top: 4rem;">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid"
+            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+            
+            <div class="glass" style="padding: 2.1rem; border-radius: 13px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.2rem;">Systems & Mechanics</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Hand-Tracking SDKs,
+                    Inverse Kinematics (IK), State Machines, Procedural Animation, Physics Integration (PhysX).</p>
+            </div>
+
+            <div class="glass" style="padding: 2.1rem; border-radius: 13px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.2rem;">Software Engineering</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Vector Math, OOP,
+                    Design Patterns (Command/State), Algorithms & Data Structures, C#, JavaScript, Java.</p>
+            </div>
+
+            <div class="glass" style="padding: 2.1rem; border-radius: 13px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.2rem;">Engine Specializations</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Unity (C#), Unreal
+                    (BP/C++), Shaders (HLSL/Node-based), Profiling & Standalone Quest Optimization.</p>
+            </div>
+
+            <div class="glass" style="padding: 2.1rem; border-radius: 13px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.2rem;">XR Hardware & Pipeline</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Meta Quest (3/Pro),
+                    HoloLens 2, Azure Kinect. Git, Perforce, Agile/Scrum, Project Technical Lead.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="work" class="portfolio-section" style="padding-top: 4rem;">
+        <div class="section-header">
+            <h2>Selected Projects</h2>
+        </div>
+
+        <div class="gallery">
+            <!-- Project 1: Dance XR -->
+            <div class="gallery-item" data-category="unity mr">
+                <div class="media-container">
+                    <img src="Assets/PNG/Dance XR/DXRUI.png"
+                        data-images='["Assets/PNG/Dance XR/DXR Capture Scene.png", "Assets/PNG/Dance XR/DXR Capture Scene2.png", "Assets/PNG/Dance XR/DXRUI.png", "Assets/PNG/Dance XR/DXRUI2.png", "Assets/PNG/Dance XR/DXRUI3.png", "Assets/PNG/Dance XR/FileSizeLimit.png", "Assets/PNG/Dance XR/HoloUI.png", "Assets/PNG/Dance XR/Music UploadUI DXR.png"]'
+                        alt="Dance XR" loading="lazy">
+                    <div class="tech-tags">
+                        <span class="tech-tag">HoloLens 2</span>
+                        <span class="tech-tag">Unity / MRTK</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">Mixed Reality</div>
+                        <h3>Dance XR</h3>
+                        <p>Mixed-reality choreography platform allowing users to visualize dance sequences through spatial animation playback.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project 3: ATRM ARJO 3000 bed trainer -->
+            <div class="gallery-item" data-category="unity unreal vr">
+                <div class="media-container">
+                    <img src="Assets/PNG/ATRM ARJO 3000 bed trainer/ATRM_bed.png"
+                        data-images='["Assets/PNG/ATRM ARJO 3000 bed trainer/ATRM_bed.png", "Assets/PNG/ATRM ARJO 3000 bed trainer/ATRM floor objects.png", "Assets/PNG/ATRM ARJO 3000 bed trainer/Grablogic for hazards.png", "Assets/PNG/ATRM ARJO 3000 bed trainer/blueprint for the hazards.png", "Assets/PNG/ATRM ARJO 3000 bed trainer/doorknocking code.png", "Assets/PNG/ATRM ARJO 3000 bed trainer/doorknocking code2.png", "Assets/PNG/ATRM ARJO 3000 bed trainer/doorknocking code3.png"]'
+                        alt="ATRM Bed Trainer" loading="lazy">
+                    <div class="tech-tags">
+                        <span class="tech-tag">Meta Quest 2</span>
+                        <span class="tech-tag">Unity/Unreal</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">VR Simulation</div>
+                        <h3>ATRM ARJO 3000 Bed Trainer</h3>
+                        <p>VR training experience that replicates the real-world functionality of the ARJO 3000 medical bed to train proper usage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Handwashing Training Module -->
+            <div class="gallery-item" data-category="unity unreal vr">
+                <div class="media-container">
+                    <img src="Assets/PNG/Unreal/Handwashing1.png"
+                        data-images='["Assets/PNG/Unreal/Handwashing1.png", "Assets/PNG/Unreal/doorblueprint.png"]'
+                        alt="Handwashing Training" loading="lazy">
+                    <div class="tech-tags">
+                        <span class="tech-tag">Meta Quest 2</span>
+                        <span class="tech-tag">Unity/Unreal</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">VR Training</div>
+                        <h3>Handwashing Module</h3>
+                        <p>Hand-tracking VR training experience designed to teach proper sanitation procedures.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Noxia Somnia Web page -->
+            <div class="gallery-item" data-category="all">
+                <div class="media-container">
+                    <img src="Assets/PNG/Noxia Somnia Web page/NoxiaSite.png"
+                        data-images='["Assets/PNG/Noxia Somnia Web page/NoxiaSite.png", "Assets/PNG/Noxia Somnia Web page/NoxiaSite2.png", "Assets/PNG/Noxia Somnia Web page/NoxiaSite3.png", "Assets/PNG/Chainfighters/ChainFightersSite1.png", "Assets/PNG/Chainfighters/ChainFightersSite2.png", "Assets/PNG/Chainfighters/ChainFightersSite sortpage1.png", "Assets/PNG/Chainfighters/ChainFightersSite sortpage2.png", "Assets/PNG/Chainfighters/ChainFightersSite sortpage3.png"]'
+                        alt="Noxia Somnia & Chainfighters Web Pages" loading="lazy">
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML / CSS</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">Web Development</div>
+                        <h3>Noxia Somnia & Chainfighters Web Pages</h3>
+                        <p>Front-end websites developed for the Noxia Somnia video game and the Chainfighters gaming platform.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project: Dance XR Performance Showcase (Inline Embed) -->
+            <div class="gallery-item large no-hover" data-category="unity mr">
+                <div class="media-container">
+                    <iframe id="youtube-showcase"
+                        title="Dance XR Performance Showcase"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen 
+                        style="width: 100%; height: 100%; border: none;"></iframe>
+                </div>
+            </div>
+
+            <!-- Project 5: Spectral Arm Task Trainer -->
+            <div class="gallery-item" data-category="unity mr">
+                <div class="media-container">
+                    <video muted loop playsinline 
+                           data-videos='["Assets/videos/spectralArm/Unity_L3VAe62Jrx.mp4", "Assets/videos/spectralArm/Unity_ORzu50fSBe.mp4", "Assets/videos/spectralArm/com.oculus.vrshell-20241021-110632.mp4", "Assets/videos/spectralArm/com.oculus.vrshell-20250305-131342-10.mp4"]'
+                           style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="Assets/videos/spectralArm/Unity_L3VAe62Jrx.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Meta Quest 3</span>
+                        <span class="tech-tag">Unity</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">Mixed Reality</div>
+                        <h3>Spectral Arm Task Trainer</h3>
+                        <p>Mixed-reality medical training system anchoring a virtual patient to a physical IV practice arm, using spatial alignment and voice interaction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: UNB 360 Code White -->
+            <div class="gallery-item" data-category="unity vr">
+                <div class="media-container">
+                    <video muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="Assets/videos/UNB360CodeWhite/com.oculus.vrshell-20250226-170646-0.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Quest 2, 3, 3s</span>
+                        <span class="tech-tag">Unity</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">VR Experience</div>
+                        <h3>UNB 360 Code White</h3>
+                        <p>Interactive choose-your-own-adventure training video system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Dance XR Development Showcase (Centered Bottom) -->
+            <div class="gallery-item centered-single" data-category="unity mr">
+                <div class="media-container">
+                    <video muted loop playsinline 
+                           data-videos='["Assets/videos/DanceXR/Unity_sWPr6aXXcy.mp4", "Assets/videos/DanceXR/Unity_fxrgtlwrm3.mp4", "Assets/videos/DanceXR/Unity_fxrgtlwrm3(1).mp4"]'
+                           style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="Assets/videos/DanceXR/Unity_sWPr6aXXcy.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HoloLens 2</span>
+                        <span class="tech-tag">Unity / MRTK</span>
+                    </div>
+                    <div class="overlay">
+                        <div class="project-role">Development Footage</div>
+                        <h3>Dance XR Development Showcase</h3>
+                        <p>Technical demonstration and development clips from the Dance XR project.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="experience" class="portfolio-section" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="section-header">
+            <h2>Experience</h2>
+        </div>
+        <div class="experience-list glass"
+            style="max-width: 900px; margin: 0 auto; padding: 2.5rem; border-radius: 16px;">
+            <div class="job" style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 1.4rem;">VR/Web Developer</h3>
+                <p
+                    style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                    <span>Spandrel Interactive, Fredericton NB</span>
+                    <span style="font-weight: 400; color: var(--text-secondary);">May 2022 - Mar 2026</span>
+                </p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li>Lead developer for hand-tracking interaction systems in the All The Right Moves training module
+                        using Meta Quest 2 and Meta XR SDK.</li>
+                    <li>Architected and implemented a custom animation playback system in Unity (C#) supporting
+                        choreography sequencing for Dance XR mixed-reality platform.</li>
+                    <li>Contributed to the development of a markerless motion capture pipeline using Microsoft Azure
+                        Kinect sensors.</li>
+                    <li>Built mixed-reality passthrough medical training simulations for Meta Quest 3, integrating
+                        physical task trainers with virtual overlays.</li>
+                    <li>Provided technical support and mentoring to developers on debugging, XR integration, and Unity
+                        workflows.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="portfolio-section" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="section-header">
+            <h2>Education</h2>
+        </div>
+        <div style="max-width: 1000px; margin: 0 auto; padding: 2.5rem; border-radius: 13px;" class="glass">
+            <div style="display: flex; flex-direction: column;">
+                <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Information Technology - Programmer
+                    Analyst</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">New Brunswick
+                    Community College (Grad. Jun 2022)</p>
+                <ul style="color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.2rem; margin-top: 0.5rem;">
+                    <li>Graduated with High Honours distinction.</li>
+                    <li>Engineered warehouse inventory system (C#/PHP).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact section -->
+    <footer id="contact" class="footer">
+        <div class="footer-content glass">
+            <h2>Let's build immersive worlds.</h2>
+            <p style="margin-bottom: 2rem;">Available for XR development and interactive project opportunities.</p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                <a href="mailto:Sean.T@live.ca" class="btn btn-primary"
+                    style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Sean.T@live.ca
+                </a>
+                <a href="https://linkedin.com/in/seantait1993" target="_blank" class="btn btn-secondary"
+                    style="border-radius: 32px; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem;">
+                <p>Cell: (506) 647-0152 | Fredericton, NB</p>
+            </div>
+
+            <!-- Associations -->
+            <div
+                style="display: flex; flex-direction: column; align-items: center; gap: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; max-width: 400px; margin: 0 auto;">
+                <p
+                    style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">
+                    Proud Member Of</p>
+                <a href="https://interactivenb.com/index.html#membership" target="_blank" rel="noopener noreferrer"
+                    style="display: inline-flex; align-items: center; opacity: 0.85; transition: var(--transition); text-decoration: none;"
+                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+                    <img src="Assets/PNG/InteractiveNBLogo.png" alt="Interactive NB" style="height: 50px; width: auto;">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sean Tait. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox for viewing full media -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="Close Lightbox">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="lightbox-inner">
+            <button class="lightbox-prev" aria-label="Previous Image" style="display: none;">&#10094;</button>
+            <div class="lightbox-content">
+                <!-- Media will be injected here via JS -->
+            </div>
+            <button class="lightbox-next" aria-label="Next Image" style="display: none;">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
