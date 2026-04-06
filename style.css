@@ -825,12 +825,23 @@ h3,
 
     .gallery {
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1.5rem;
     }
 
+    .gallery-item {
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+
+    .gallery-item.large,
+    .gallery-item.centered-single,
     .gallery-item.wide,
     .gallery-item.tall {
-        grid-column: span 1;
-        grid-row: span 1;
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        justify-self: stretch;
     }
 
     .hero h1 {
