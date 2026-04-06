@@ -837,3 +837,30 @@ h3,
         font-size: 3rem;
     }
 }
+
+/* Accessibility (WCAG 2.2) Additions */
+html {
+    scroll-padding-top: 90px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+body.reduced-motion {
+    scroll-behavior: auto !important;
+}
+body.reduced-motion::after {
+    animation: none !important;
+}
+.reduced-motion .bg-glow {
+    animation: none !important;
+}
+.reduced-motion .arrow {
+    animation: none !important;
+}
+.reduced-motion #cyberCanvas {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease;
+}

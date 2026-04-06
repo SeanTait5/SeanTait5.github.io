@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ---- Motion Toggle Logic ----
+    const motionToggleBtn = document.getElementById('motion-toggle');
+    const motionIconOn = document.getElementById('motion-icon-on');
+    const motionIconOff = document.getElementById('motion-icon-off');
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const storedMotionPref = localStorage.getItem('motionPref');
+    
+    let isReducedMotion = storedMotionPref === 'reduced' || (!storedMotionPref && prefersReducedMotion);
+
+    const applyMotionPreference = () => {
+        if (isReducedMotion) {
+            document.body.classList.add('reduced-motion');
+            if (motionIconOn) motionIconOn.classList.add('hidden');
+            if (motionIconOff) motionIconOff.classList.remove('hidden');
+        } else {
+            document.body.classList.remove('reduced-motion');
+            if (motionIconOn) motionIconOn.classList.remove('hidden');
+            if (motionIconOff) motionIconOff.classList.add('hidden');
+        }
+        document.dispatchEvent(new CustomEvent('motionToggled', { detail: { isReduced: isReducedMotion } }));
+    };
+
+    applyMotionPreference();
+
+    if (motionToggleBtn) {
+        motionToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isReducedMotion = !isReducedMotion;
+            localStorage.setItem('motionPref', isReducedMotion ? 'reduced' : 'allow');
+            applyMotionPreference();
+        });
+    }
+
     // ---- YouTube Inline Embed: Set src with origin to fix Error 153 ----
     const showcaseIframe = document.getElementById('youtube-showcase');
     if (showcaseIframe) {
@@ -45,6 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open Lightbox
     galleryItems.forEach(item => {
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
             const video = item.querySelector('video');
@@ -135,6 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            
+            lightbox.lastFocus = document.activeElement;
+            setTimeout(() => {
+                if (lightboxClose) lightboxClose.focus();
+            }, 50);
         });
     });
 
@@ -165,6 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const existingMedia = lightboxContent.querySelector('img, video, iframe');
             if (existingMedia) existingMedia.remove();
         }, 400);
+
+        if (lightbox.lastFocus) {
+            lightbox.lastFocus.focus();
+            lightbox.lastFocus = null;
+        }
     };
 
     lightboxClose.addEventListener('click', (e) => {
@@ -193,6 +243,19 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (e.key === 'ArrowRight' && currentLightboxImages.length > 1) {
             currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
             updateLightboxMedia();
+        } else if (e.key === 'Tab') {
+            const focusables = Array.from(lightbox.querySelectorAll('button, iframe, video, [tabindex]:not([tabindex="-1"])')).filter(el => el.style.display !== 'none');
+            if (focusables.length > 0) {
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    last.focus();
+                    e.preventDefault();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    first.focus();
+                    e.preventDefault();
+                }
+            }
         }
     });
 
@@ -331,7 +394,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
 
+    let animationId;
+
     function drawParticles() {
+        if (document.body.classList.contains('reduced-motion')) {
+            animationId = null;
+            return;
+        }
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // Draw connections
@@ -366,8 +435,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
         });
 
-        requestAnimationFrame(drawParticles);
+        animationId = requestAnimationFrame(drawParticles);
     }
 
     drawParticles();
+
+    document.addEventListener('motionToggled', (e) => {
+        if (!e.detail.isReduced && !animationId) {
+            drawParticles();
+        }
+    });
 })();
